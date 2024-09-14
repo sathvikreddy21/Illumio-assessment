@@ -18,6 +18,8 @@ If a port and protocol combination is not found in the lookup table, the transac
 To use this program, ensure you have Python installed on your system. The program does not require any non-default Python libraries.
 Usage
 
+**python setup** : [https://docs.python.org/3/using/index.html] 
+
     Clone the repository or download the Python file.
     Prepare Input Files:
         A flow log file (e.g., flow_log.txt) containing flow log data.
@@ -26,7 +28,9 @@ Usage
 ## Run the Program:
 **python flow_log_parser.py flow_log_file lookup_table_file output_file**
 
-    Example:  python flow_log_parser.py flow_logs.txt lookup.csv output.csv
+Example:  
+
+    python flow_log_parser.py flow_logs.txt lookup.csv output.csv
 
 **flow_log_file:** Path to the flow log file (e.g., flow_log.txt).
 
