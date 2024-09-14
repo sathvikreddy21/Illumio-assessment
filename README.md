@@ -25,6 +25,8 @@ Usage
         A flow log file (e.g., flow_log.txt) containing flow log data.
         A lookup table file (e.g., lookup.csv) in CSV format.
 
+
+
 ## Run the Program:
 **python flow_log_parser.py flow_log_file lookup_table_file output_file**
 
@@ -32,11 +34,15 @@ Example:
 
     python flow_log_parser.py flow_logs.txt lookup.csv output.csv
 
+*Note: to run with the same command given above please make sure all the documents are in the same folder or paste the appropriate file path of each file*
+
 **flow_log_file:** Path to the flow log file (e.g., flow_log.txt).
 
 **lookup_table_file:** Path to the lookup table CSV file (e.g., lookup.csv).
 
 **output_file:** Path where the output CSV file will be saved (e.g., output.csv)
+
+
 
 ## View Output:
 The output file contains two sections:
