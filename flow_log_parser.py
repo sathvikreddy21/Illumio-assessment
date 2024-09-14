@@ -6,7 +6,7 @@ def load_lookup_table(lookup_file):
         reader = csv.DictReader(file)
         for row in reader:
             port = row['dstport']
-            protocol = row['protocol'].lower()  # Normalize protocol to lowercase
+            protocol = row['protocol'].lower()  # Normalizing the protocol to lowercase
             tag = row['tag']
             lookup_table[(port, protocol)] = tag
     return lookup_table
@@ -15,7 +15,7 @@ def process_flow_log(flow_log_file, lookup_table):
     port_protocol_counts = {}
     untagged_count = 0
 
-    # Protocol mapping
+    # Mapping the protocols
     protocol_mapping = {'6': 'tcp', '17': 'udp', '1': 'icmp'}
 
     with open(flow_log_file, 'r') as file:
@@ -53,17 +53,17 @@ def write_output(tag_counts, port_protocol_counts, output_file):
         for (port, protocol), count in port_protocol_counts.items():
             f.write(f"{port},{protocol},{count}\n")
 def main():
-    lookup_file = 'lookup.csv'  # CSV file with lookup data
-    flow_log_file = 'flow_logs.txt'  # Flow log file
-    output_file = 'output.txt'  # Output file to write the results
+    lookup_file = 'lookup.csv'  # CSV file location with lookup data
+    flow_log_file = 'flow_logs.txt'  # Flow log file location
+    output_file = 'output.txt'  # Output file location to write the results
 
-    # Load the lookup table
+    # Loading the lookup table
     lookup_table = load_lookup_table(lookup_file)
 
-    # Process the flow logs and get the counts
+    # Processto  the flow logs and get the counts
     tag_counts, port_protocol_counts = process_flow_log(flow_log_file, lookup_table)
 
-    # Write the output
+    # adding the output into output file
     write_output(tag_counts, port_protocol_counts, output_file)
     print("Processing complete. Results written to", output_file)
 
